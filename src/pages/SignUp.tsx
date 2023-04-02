@@ -22,6 +22,7 @@ const SignUp = () => {
           data-testid='email-input'
         />
       </div>
+
       <div>
         <label htmlFor='password-input'>비밀번호</label>
         <input
@@ -32,6 +33,7 @@ const SignUp = () => {
           data-testid='password-input'
         />
       </div>
+
       <button type='submit' data-testid='signup-button' disabled={disabled}>
         회원가입
       </button>

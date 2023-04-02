@@ -1,5 +1,9 @@
+import { RouterProvider } from 'react-router-dom';
+
+import { routers } from './router';
+
 function App() {
-  return <>프로젝트 빌드 !</>;
+  return <RouterProvider router={routers} />;
 }
 
 export default App;

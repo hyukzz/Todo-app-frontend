@@ -4,6 +4,8 @@ import { Router as RemixRouter } from '@remix-run/router/dist/router';
 import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
+import Todo from './pages/Todo';
+import IsAuthLayout from './layout/IsAuthLayout';
 
 interface RouterBase {
   id: number;
@@ -45,6 +47,13 @@ const routerData: RouterElement[] = [
     element: <SignIn />,
     isAuth: false,
   },
+  {
+    id: 3,
+    path: '/todo',
+    label: 'TODO',
+    element: <Todo />,
+    isAuth: true,
+  },
 ];
 
 export const routers: RemixRouter = createBrowserRouter(
@@ -52,10 +61,7 @@ export const routers: RemixRouter = createBrowserRouter(
     if (router.isAuth) {
       return {
         path: router.path,
-        /* 
-          <todo layout>으로 element 래핑
-        */
-        element: <>{router.element}</>,
+        element: <IsAuthLayout>{router.element}</IsAuthLayout>,
       };
     } else {
       return {

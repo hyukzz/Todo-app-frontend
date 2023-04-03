@@ -1,3 +1,4 @@
+import { useAuth } from '../hooks/useAuth';
 import { useSignUpForm } from '../hooks/useSignUpForm';
 
 const SignUp = () => {
@@ -9,6 +10,8 @@ const SignUp = () => {
     handlePasswordChange,
     handleSignUpSubmit,
   } = useSignUpForm();
+
+  useAuth();
 
   return (
     <form onSubmit={handleSignUpSubmit}>

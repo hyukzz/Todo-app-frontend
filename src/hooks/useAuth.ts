@@ -5,13 +5,17 @@ export const useAuth = () => {
   const { routeTo, currentPath } = useRouter();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const accessToken = localStorage.getItem('access_token');
 
-    if (!token && currentPath === '/todo') {
+    if (!accessToken && currentPath === '/todo') {
       routeTo('/signin');
-    } else if (
-      token &&
-      (currentPath === '/signin' || currentPath === '/signup')
+    }
+
+    if (
+      accessToken &&
+      (currentPath === '/signin' ||
+        currentPath === '/signup' ||
+        currentPath === '/')
     ) {
       routeTo('/todo');
     }

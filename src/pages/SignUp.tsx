@@ -1,26 +1,22 @@
 import { useAuth } from '../hooks/useAuth';
-import { useSignUpForm } from '../hooks/useSignUpForm';
+import { useSignSubmitForm } from '../hooks/useSignSubmitForm';
 
 const SignUp = () => {
+  useAuth();
+
   const {
-    email,
-    password,
-    disabled,
     handleEmailChange,
     handlePasswordChange,
+    disabled,
     handleSignUpSubmit,
-  } = useSignUpForm();
-
-  useAuth();
+  } = useSignSubmitForm();
 
   return (
     <form onSubmit={handleSignUpSubmit}>
       <div>
         <label htmlFor='email-input'>이메일</label>
         <input
-          id='email-input'
           type='email'
-          value={email}
           onChange={handleEmailChange}
           data-testid='email-input'
         />
@@ -29,15 +25,17 @@ const SignUp = () => {
       <div>
         <label htmlFor='password-input'>비밀번호</label>
         <input
-          id='password-input'
           type='password'
-          value={password}
           onChange={handlePasswordChange}
           data-testid='password-input'
         />
       </div>
 
-      <button type='submit' data-testid='signup-button' disabled={disabled}>
+      <button
+        type='submit'
+        disabled={disabled ? true : false}
+        data-testid='signup-button'
+      >
         회원가입
       </button>
     </form>

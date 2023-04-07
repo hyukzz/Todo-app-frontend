@@ -18,11 +18,7 @@ export const deleteTodoApi = async (id: number) => {
   return response;
 };
 
-export const updateTodoApi = async (
-  id: number,
-  todo: string,
-  isCompleted: boolean
-) => {
+export const updateTodoApi = async (id: number, todo: string, isCompleted: boolean) => {
   const response = await api.put(`/todos/${id}`, {
     todo,
     isCompleted,

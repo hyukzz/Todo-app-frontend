@@ -4,15 +4,13 @@ import { signUpApi, signInApi } from '../api/signApi';
 
 export const useSignSubmitForm = () => {
   const { routeTo } = useRouter();
-  const { email, password, disabled, handleEmailChange, handlePasswordChange } =
+  const { email, password, disabled, emailError, passwordError, handleEmailChange, handlePasswordChange } =
     useSignForm();
 
-  const handleSignUpSubmit = async (
-    event: React.FormEvent<HTMLFormElement>
-  ) => {
+  const handleSignUpSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!email.includes('@') || password.length < 8) {
+    if (emailError || passwordError) {
       return;
     }
 
@@ -21,14 +19,17 @@ export const useSignSubmitForm = () => {
 
       routeTo('/signin');
     } catch (error) {
-      alert('회원가입을 다시 시도해주세요.');
+      alert('Please try signing up again.');
     }
   };
 
-  const handleSignInSubmit = async (
-    event: React.FormEvent<HTMLFormElement>
-  ) => {
+  const handleSignInSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (emailError || passwordError) {
+      return;
+    }
+
     try {
       const signInRes = await signInApi(email, password);
 
@@ -36,7 +37,7 @@ export const useSignSubmitForm = () => {
 
       routeTo('/todo');
     } catch (error) {
-      alert('로그인을 다시 시도해주세요');
+      alert('Please try signing in again.');
     }
   };
 
@@ -44,6 +45,8 @@ export const useSignSubmitForm = () => {
     handleEmailChange,
     handlePasswordChange,
     disabled,
+    emailError,
+    passwordError,
     handleSignUpSubmit,
     handleSignInSubmit,
   };

@@ -20,7 +20,7 @@ const TodoItem = ({ todo }: { todo: TodoItemType }) => {
   const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!window.confirm('정말 수정하시겠습니까?')) return;
+    if (!window.confirm('수정하시겠습니까?')) return;
 
     const {
       todoInput: { value },
@@ -34,38 +34,66 @@ const TodoItem = ({ todo }: { todo: TodoItemType }) => {
   };
 
   const handleDelete = async (id: number) => {
-    if (!window.confirm('정말 삭제하시겠습니까?')) return;
+    if (!window.confirm('삭제하시겠습니까?')) return;
 
     await deleteTodoApi(id);
     getTodoResponse();
   };
 
   return (
-    <>
+    <div className='flex items-center py-2 border-b border-gray-300 m-2'>
       {isModify ? (
-        <form onSubmit={handleUpdate}>
-          <input type='checkbox' checked={isCompleted} onChange={handleCompleted} />
-          <input name='todoInput' defaultValue={todoData.todo} data-testid='modify-input' />
-          <button data-testid='submit-button'>제출</button>
-          <button onClick={() => setIsModify(false)} data-testid='cancel-button'>
-            취소
-          </button>
+        <form className='flex-1 flex items-center' onSubmit={handleUpdate}>
+          <input className='mr-2' type='checkbox' checked={isCompleted} onChange={handleCompleted} />
+          <input
+            className='px-2 py-1 mr-1 rounded border-gray-300 border w-3/5'
+            name='todoInput'
+            defaultValue={todoData.todo}
+            data-testid='modify-input'
+          />
+          <div className='flex items-center ml-auto'>
+            <button
+              className='px-2 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-700 mr-2'
+              data-testid='submit-button'
+            >
+              제출
+            </button>
+            <button
+              className='px-2 py-1 rounded-md border border-gray-300 hover:bg-gray-100'
+              onClick={() => setIsModify(false)}
+              data-testid='cancel-button'
+            >
+              취소
+            </button>
+          </div>
         </form>
       ) : (
         <>
-          <input type='checkbox' checked={isCompleted} onChange={handleCompleted} />
-          <span>{todoData.todo}</span>
+          <div className='flex-1'>
+            <div className='ml-auto d-flex flex-column'>
+              <input className='mr-2' type='checkbox' checked={isCompleted} onChange={handleCompleted} />
+              <span className={isCompleted ? 'line-through' : ''}>{todoData.todo}</span>
+            </div>
+          </div>
           <div>
-            <button onClick={() => setIsModify(previous => !previous)} data-testid='modify-button'>
+            <button
+              className='px-2 py-1 bg-gray-200 text-gray-600 rounded-md mr-2'
+              onClick={() => setIsModify(previous => !previous)}
+              data-testid='modify-button'
+            >
               수정
             </button>
-            <button onClick={() => handleDelete(todoData.id)} data-testid='delete-button'>
+            <button
+              className='px-2 py-1 bg-red-500 text-white rounded-md'
+              onClick={() => handleDelete(todoData.id)}
+              data-testid='delete-button'
+            >
               삭제
             </button>
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,8 @@
 import { useRouter } from './useRouter';
 import { useSignForm } from './useSignForm';
 import { signUpApi, signInApi } from '../api/signApi';
+import { notification } from '../utils/toast';
+import { AxiosError } from 'axios';
 
 export const useSignSubmitForm = () => {
   const { routeTo } = useRouter();
@@ -14,12 +16,12 @@ export const useSignSubmitForm = () => {
       return;
     }
 
-    try {
-      await signUpApi(email, password);
-
+    const response = await signUpApi(email, password);
+    if (response?.status === 201) {
+      notification('success', '회원가입에 성공했습니다!');
       routeTo('/signin');
-    } catch (error) {
-      alert('Please try signing up again.');
+    } else {
+      return;
     }
   };
 
@@ -30,14 +32,14 @@ export const useSignSubmitForm = () => {
       return;
     }
 
-    try {
-      const signInRes = await signInApi(email, password);
+    const response = await signInApi(email, password);
 
-      localStorage.setItem('access_token', signInRes.toString());
-
+    if (response?.status === 200) {
+      notification('success', '로그인에 성공했습니다!');
+      localStorage.setItem('access_token', response.data.access_token);
       routeTo('/todo');
-    } catch (error) {
-      alert('Please try signing in again.');
+    } else {
+      return;
     }
   };
 

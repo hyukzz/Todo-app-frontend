@@ -5,6 +5,7 @@ import useTodo from '../hooks/useTodo';
 import TodoList from '../components/TodoList';
 import { TodoItemType } from '../@types/types';
 import TodoCreate from '../components/TodoCreate';
+import SignOut from '../components/SignOut';
 
 interface TodoContextType {
   isLoading: boolean;
@@ -29,12 +30,19 @@ const Todo = () => {
   }, [getTodoResponse]);
 
   return (
-    <>
-      <TodoContext.Provider value={todoValues}>
-        <TodoCreate />
-        <TodoList />
-      </TodoContext.Provider>
-    </>
+    <div className='h-screen bg-gray-200 flex justify-center items-center'>
+      <div className='max-w-3xl mx-auto p-8 bg-white rounded-lg shadow-lg w-full'>
+        <TodoContext.Provider value={todoValues}>
+          <div className='flex justify-between items-center mb-4'>
+            <div className='font-bold text-xl text-blue-600 tracking-wide select-none'>TODO LIST</div>
+            <SignOut />
+          </div>
+          <div className='border-b border-gray-300 mb-4'></div>
+          <TodoCreate />
+          <TodoList />
+        </TodoContext.Provider>
+      </div>
+    </div>
   );
 };
 

@@ -34,7 +34,7 @@ const Todo = () => {
       <div className='max-w-3xl mx-auto p-8 bg-white rounded-lg shadow-lg w-full'>
         <TodoContext.Provider value={todoValues}>
           <div className='flex justify-between items-center mb-4'>
-            <div className='font-bold text-xl text-blue-600 tracking-wide select-none'>TODO LIST</div>
+            <div className='font-bold text-3xl text-blue-600 tracking-wide select-none'>TODO LIST</div>
             <SignOut />
           </div>
           <div className='border-b border-gray-300 mb-4'></div>

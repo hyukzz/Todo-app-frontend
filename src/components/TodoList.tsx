@@ -8,8 +8,8 @@ const TodoList = () => {
   const { isLoading, todoData } = useContext(TodoContext);
 
   return (
-    <div className='relative h-[500px] overflow-hidden'>
-      <div className='absolute top-0 left-0 w-full h-full overflow-auto pt-3'>
+    <div className='relative h-[500px] overflow-hidden mt-2'>
+      <div className='absolute top-0 left-0 w-full h-full overflow-auto'>
         <ul className='list-disc pl-5 pr-10'>
           {isLoading ? (
             <div className='absolute inset-0 flex items-center justify-center'>

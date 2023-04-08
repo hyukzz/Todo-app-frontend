@@ -1,32 +1,58 @@
+import { AxiosError } from 'axios';
 import { api } from './api';
+import { notification } from '../utils/toast';
 
 export const getTodoApi = async () => {
-  const { data } = await api.get('/todos');
+  try {
+    const { data } = await api.get('/todos');
 
-  return data;
+    return data;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      notification('error', error.response?.data.message);
+      return;
+    }
+  }
 };
 
 export const createTodoApi = async (todo: string) => {
-  const response = await api.post('/todos', { todo });
+  try {
+    const response = await api.post('/todos', { todo });
 
-  return response;
+    return response;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      notification('error', error.response?.data.message);
+    }
+  }
 };
 
 export const deleteTodoApi = async (id: number) => {
-  const response = api.delete(`/todos/${id}`);
+  try {
+    const response = api.delete(`/todos/${id}`);
 
-  return response;
+    return response;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      notification('error', error.response?.data.message);
+    }
+  }
 };
 
 export const updateTodoApi = async (id: number, todo: string, isCompleted: boolean) => {
-  const response = await api.put(`/todos/${id}`, {
-    todo,
-    isCompleted,
-  });
-  /* 
-    response.data === (todo item)
-    => id: number isCompleted: boolean todo: string userId: number 
-  */
-
-  return response.data;
+  try {
+    const response = await api.put(`/todos/${id}`, {
+      todo,
+      isCompleted,
+    });
+    /* 
+      response.data === (todo item)
+      => id: number isCompleted: boolean todo: string userId: number 
+    */
+    return response.data;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      notification('error', error.response?.data.message);
+    }
+  }
 };

@@ -3,10 +3,12 @@ import { useState, useContext } from 'react';
 import { TodoContext } from '../pages/Todo';
 import { deleteTodoApi, updateTodoApi } from '../api/todoApi';
 import { TodoItemType } from '../@types/types';
+import useConfirmation from './Confirm';
 
 const TodoItem = ({ todo }: { todo: TodoItemType }) => {
   const { getTodoResponse } = useContext(TodoContext);
 
+  const [Confirmation, confirm] = useConfirmation();
   const [todoData, setTodoData] = useState(todo);
   const [isModify, setIsModify] = useState(false);
   const [isCompleted, setIsCompleted] = useState(todo.isCompleted);
@@ -20,8 +22,6 @@ const TodoItem = ({ todo }: { todo: TodoItemType }) => {
   const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!window.confirm('수정하시겠습니까?')) return;
-
     const {
       todoInput: { value },
     } = e.currentTarget;
@@ -34,10 +34,12 @@ const TodoItem = ({ todo }: { todo: TodoItemType }) => {
   };
 
   const handleDelete = async (id: number) => {
-    if (!window.confirm('삭제하시겠습니까?')) return;
-
-    await deleteTodoApi(id);
-    getTodoResponse();
+    confirm('삭제하시겠습니까?').then(async confirmed => {
+      if (confirmed) {
+        await deleteTodoApi(id);
+        getTodoResponse();
+      }
+    });
   };
 
   return (
@@ -90,6 +92,7 @@ const TodoItem = ({ todo }: { todo: TodoItemType }) => {
             >
               삭제
             </button>
+            {Confirmation}
           </div>
         </>
       )}

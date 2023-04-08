@@ -12,8 +12,6 @@ export const signUpApi = async (email: string, password: string) => {
     if (error instanceof AxiosError) {
       notification('error', error.response?.data.message);
       return;
-    } else {
-      return;
     }
   }
 };

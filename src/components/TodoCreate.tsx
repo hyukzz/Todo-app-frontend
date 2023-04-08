@@ -24,9 +24,9 @@ const TodoCreate = () => {
   };
 
   return (
-    <div className='flex flex-row justify-center items-center space-x-4 z-10'>
+    <div className='flex flex-row justify-center items-center space-x-4'>
       <input
-        className='flex-grow border border-gray-300 p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600'
+        className='flex-grow border border-gray-300 p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-700'
         value={inputValue}
         onChange={handleInputChange}
         data-testid='new-todo-input'

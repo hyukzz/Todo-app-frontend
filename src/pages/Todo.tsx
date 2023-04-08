@@ -4,6 +4,7 @@ import { useAuth } from '../hooks/useAuth';
 import useTodo from '../hooks/useTodo';
 import TodoList from '../components/TodoList';
 import { TodoItemType } from '../@types/types';
+import TodoCreate from '../components/TodoCreate';
 
 interface TodoContextType {
   isLoading: boolean;
@@ -30,6 +31,7 @@ const Todo = () => {
   return (
     <>
       <TodoContext.Provider value={todoValues}>
+        <TodoCreate />
         <TodoList />
       </TodoContext.Provider>
     </>

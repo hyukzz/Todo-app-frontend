@@ -11,6 +11,7 @@ export const signUpApi = async (email: string, password: string) => {
   } catch (error) {
     if (error instanceof AxiosError) {
       notification('error', error.response?.data.message);
+      return;
     } else {
       return;
     }
@@ -27,6 +28,7 @@ export const signInApi = async (email: string, password: string) => {
       // 401에러만 영어로 데이터를 내려주기 때문에 예외처리
       if (error.response?.status === 401) {
         notification('error', '아이디와 비밀번호를 확인해주세요!');
+        return;
       } else {
         notification('error', error.response?.data.message);
         return;

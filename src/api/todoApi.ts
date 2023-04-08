@@ -9,8 +9,13 @@ export const getTodoApi = async () => {
     return data;
   } catch (error) {
     if (error instanceof AxiosError) {
-      notification('error', error.response?.data.message);
-      return;
+      if (error.response?.status === 401) {
+        notification('error', '로그인을 먼저해주세요!');
+        return;
+      } else {
+        notification('error', error.response?.data.message);
+        return;
+      }
     }
   }
 };
@@ -23,6 +28,7 @@ export const createTodoApi = async (todo: string) => {
   } catch (error) {
     if (error instanceof AxiosError) {
       notification('error', error.response?.data.message);
+      return;
     }
   }
 };
@@ -35,6 +41,7 @@ export const deleteTodoApi = async (id: number) => {
   } catch (error) {
     if (error instanceof AxiosError) {
       notification('error', error.response?.data.message);
+      return;
     }
   }
 };
@@ -53,6 +60,7 @@ export const updateTodoApi = async (id: number, todo: string, isCompleted: boole
   } catch (error) {
     if (error instanceof AxiosError) {
       notification('error', error.response?.data.message);
+      return;
     }
   }
 };

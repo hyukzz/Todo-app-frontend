@@ -10,7 +10,7 @@ const SignIn = () => {
     useSignSubmitForm();
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen'>
+    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-200'>
       <form className='bg-white p-6 rounded-lg shadow-md' onSubmit={handleSignInSubmit}>
         <h1 className='text-4xl font-extrabold mb-8 text-center text-blue-600 tracking-wide leading-tight select-none hover:text-blue-700'>
           로그인

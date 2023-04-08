@@ -24,12 +24,21 @@ const TodoCreate = () => {
   };
 
   return (
-    <>
-      <input value={inputValue} onChange={handleInputChange} data-testid='new-todo-input' />
-      <button onClick={handleCreateTodo} data-testid='new-todo-add-button'>
+    <div className='flex flex-row justify-center items-center space-x-4 z-10'>
+      <input
+        className='flex-grow border border-gray-300 p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600'
+        value={inputValue}
+        onChange={handleInputChange}
+        data-testid='new-todo-input'
+      />
+      <button
+        className='w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded'
+        onClick={handleCreateTodo}
+        data-testid='new-todo-add-button'
+      >
         추가
       </button>
-    </>
+    </div>
   );
 };
 

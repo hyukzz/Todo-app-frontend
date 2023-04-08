@@ -48,7 +48,7 @@ const TodoItem = ({ todo }: { todo: TodoItemType }) => {
         <form className='flex-1 flex items-center' onSubmit={handleUpdate}>
           <input className='mr-2' type='checkbox' checked={isCompleted} onChange={handleCompleted} />
           <input
-            className='px-2 py-1 mr-1 rounded border-gray-300 border w-3/5'
+            className='px-2 py-1 mr-1 rounded border-gray-300 border w-2/5'
             name='todoInput'
             defaultValue={todoData.todo}
             data-testid='modify-input'

@@ -1,46 +1,80 @@
-# Getting Started with Create React App
+# Todo app 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **배포 링크 : https://wanted-todo-app.vercel.app/**  
 
-## Available Scripts
+## 소개
 
-In the project directory, you can run:
+회원가입을 한 뒤, 로그인하여 Todo 추가, 수정, 삭제 기능을 이용할 수 있습니다. <br>
+로그인을 하지 않으시면 Todo app을 이용하실 수 없습니다.
 
-### `npm start`
+## 기능 시연 gif
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<div>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+|                                                          1. 회원가입                                                          |                                                           2. 로그인                                                           |                                                          3. 로그아웃                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://user-images.githubusercontent.com/81045794/230766472-0615b960-6801-4dbf-890a-c5f7b04d0cf5.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/81045794/230766611-6ff06d16-4a48-4dff-a719-b654fe37feb8.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/81045794/230766685-d1c80b92-192d-4f5f-b9d7-2f5119d9da77.gif" width=245 /> |
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+|                                                          4. Todo 추가                                                          |                                                           5. Todo 수정                                                           |                                                          6. Todo 삭제                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://user-images.githubusercontent.com/81045794/230766969-30955e8d-bc9c-402e-b7be-c02ad01c13e7.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/81045794/230767215-4da3d9a9-4f2d-4d1b-bbb8-d47ee81a2b3a.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/81045794/230767376-851c5da9-dc17-42d5-ba93-f3344fa2378b.gif" width=245 /> |
 
-### `npm run build`
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Stacks
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- TypeScript
+- Axios
+- Tailwind CSS
+- React-Toastify
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`배포 -> Vercel`
 
-### `npm run eject`
+## 실행 방법
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+git clone https://github.com/hyukzz/wanted-pre-onboarding-frontend.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 폴더 구조
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+📦src
+ ┣ 📂@types
+ ┃ ┗ 📜types.d.ts
+ ┣ 📂api
+ ┃ ┣ 📜api.ts
+ ┃ ┣ 📜signApi.ts
+ ┃ ┗ 📜todoApi.ts
+ ┣ 📂assets
+ ┃ ┗ 📜signout_icon.png
+ ┣ 📂components
+ ┃ ┣ 📜Confirm.tsx
+ ┃ ┣ 📜SignOut.tsx
+ ┃ ┣ 📜TodoCreate.tsx
+ ┃ ┣ 📜TodoItem.tsx
+ ┃ ┗ 📜TodoList.tsx
+ ┣ 📂hooks
+ ┃ ┣ 📜useAuth.ts
+ ┃ ┣ 📜useRouter.ts
+ ┃ ┣ 📜useSignForm.ts
+ ┃ ┣ 📜useSignSubmitForm.ts
+ ┃ ┗ 📜useTodo.ts
+ ┣ 📂pages
+ ┃ ┣ 📜SignIn.tsx
+ ┃ ┣ 📜SignUp.tsx
+ ┃ ┗ 📜Todo.tsx
+ ┣ 📂utils
+ ┃ ┗ 📜toast.ts
+ ┣ 📜App.tsx
+ ┣ 📜index.css
+ ┣ 📜index.tsx
+ ┗ 📜router.tsx
+```

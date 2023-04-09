@@ -13,13 +13,13 @@
 
 |                                                          1. 회원가입                                                          |                                                           2. 로그인                                                           |                                                          3. 로그아웃                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/81045794/230766472-0615b960-6801-4dbf-890a-c5f7b04d0cf5.gif" width=250 /> | <img src="https://user-images.githubusercontent.com/81045794/230766611-6ff06d16-4a48-4dff-a719-b654fe37feb8.gif" width=250 /> | <img src="https://user-images.githubusercontent.com/81045794/230766685-d1c80b92-192d-4f5f-b9d7-2f5119d9da77.gif" width=250 /> |
+| <img src="https://user-images.githubusercontent.com/81045794/230766472-0615b960-6801-4dbf-890a-c5f7b04d0cf5.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/81045794/230766611-6ff06d16-4a48-4dff-a719-b654fe37feb8.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/81045794/230766685-d1c80b92-192d-4f5f-b9d7-2f5119d9da77.gif" width=245 /> |
 
 <br>
 
 |                                                          4. Todo 추가                                                          |                                                           5. Todo 수정                                                           |                                                          6. Todo 삭제                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/81045794/230766969-30955e8d-bc9c-402e-b7be-c02ad01c13e7.gif" width=250 /> | <img src="https://user-images.githubusercontent.com/81045794/230767215-4da3d9a9-4f2d-4d1b-bbb8-d47ee81a2b3a.gif" width=250 /> | <img src="https://user-images.githubusercontent.com/81045794/230767376-851c5da9-dc17-42d5-ba93-f3344fa2378b.gif" width=250 /> |
+| <img src="https://user-images.githubusercontent.com/81045794/230766969-30955e8d-bc9c-402e-b7be-c02ad01c13e7.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/81045794/230767215-4da3d9a9-4f2d-4d1b-bbb8-d47ee81a2b3a.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/81045794/230767376-851c5da9-dc17-42d5-ba93-f3344fa2378b.gif" width=245 /> |
 
 </div>
 

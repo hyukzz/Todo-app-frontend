@@ -10,7 +10,7 @@ const TodoList = () => {
   return (
     <div className='relative h-[500px] overflow-hidden mt-2'>
       <div className='absolute top-0 left-0 w-full h-full overflow-auto'>
-        <ul className='list-disc pl-5 pr-10'>
+        <li className='list-none pl-5 pr-10'>
           {isLoading ? (
             <div className='absolute inset-0 flex items-center justify-center'>
               <div className='rounded-full h-16 w-16 border-b-2 border-gray-300 animate-spin'></div>
@@ -18,7 +18,7 @@ const TodoList = () => {
           ) : (
             todoData?.map((todoData: TodoItemType) => <TodoItem key={todoData.id} todo={todoData} />)
           )}
-        </ul>
+        </li>
         {!isLoading && todoData && todoData.length === 0 && (
           <div className='flex justify-center items-center h-full'>
             <span className='text-gray-500 select-none'>TODO LIST가 비어있습니다.</span>

@@ -1,6 +1,8 @@
 import { useState } from 'react';
+
 import { useRouter } from '../hooks/useRouter';
 import SignOutIcon from '../assets/signout_icon.png';
+import { notification } from '../utils/toast';
 
 const SignOut = () => {
   const { routeTo } = useRouter();
@@ -13,6 +15,7 @@ const SignOut = () => {
 
   const handleConfirmSignOut = () => {
     localStorage.removeItem('access_token');
+    notification('success', '안녕히 가세요 ...');
     routeTo('/signin');
   };
 

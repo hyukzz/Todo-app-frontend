@@ -7,7 +7,17 @@
 회원가입을 한 뒤, 로그인하여 Todo 추가, 수정, 삭제 기능을 이용할 수 있습니다. <br>
 로그인을 하지 않으시면 Todo app을 이용하실 수 없습니다.
 
-## 기능 시연 gif
+## 프로젝트 실행 방법
+
+```
+git clone https://github.com/hyukzz/wanted-pre-onboarding-frontend.git
+
+npm install
+
+npm start
+```
+
+## 데모 영상
 
 <div>
 
@@ -32,16 +42,6 @@
 - React-Toastify
 
 `배포 -> Vercel`
-
-## 실행 방법
-
-```
-git clone https://github.com/hyukzz/wanted-pre-onboarding-frontend.git
-
-npm install
-
-npm start
-```
 
 ## 폴더 구조
 

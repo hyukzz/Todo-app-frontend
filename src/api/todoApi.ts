@@ -10,7 +10,7 @@ export const getTodoApi = async () => {
   } catch (error) {
     if (error instanceof AxiosError) {
       if (error.response?.status === 401) {
-        notification('error', '로그인을 먼저해주세요!');
+        notification('warning', '로그인을 먼저해주세요!');
         return;
       } else {
         notification('error', error.response?.data.message);

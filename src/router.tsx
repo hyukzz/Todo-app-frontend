@@ -17,7 +17,7 @@ const routerData: RouterElement[] = [
     id: 0,
     path: '/',
     label: 'Home',
-    element: <Navigate to='/todo' />,
+    element: <Navigate to='/signin' />,
   },
   {
     id: 1,

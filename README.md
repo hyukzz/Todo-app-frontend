@@ -1,6 +1,6 @@
 # Todo app 
 
-## **배포 링크 : https://wanted-todo-app.vercel.app/**  
+## **배포 링크 : https://hyuk-todo-app.vercel.app/**  
 
 ## 소개
 
@@ -10,7 +10,7 @@
 ## 프로젝트 실행 방법
 
 ```
-git clone https://github.com/hyukzz/wanted-pre-onboarding-frontend.git
+git clone https://github.com/hyukzz/Todo-app-frontend.git
 
 npm install
 

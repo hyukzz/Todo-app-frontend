@@ -10,8 +10,7 @@
 ## 프로젝트 실행 방법
 
 ```
-git clone https://github.com/hyukzz/Todo-app-frontend.git
-
+git clone https://github.com/hyukzz/wanted-pre-onboarding-frontend.git
 npm install
 
 npm start

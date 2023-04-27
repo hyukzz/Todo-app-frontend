@@ -10,13 +10,13 @@ import SignOut from '../components/SignOut';
 interface TodoContextType {
   isLoading: boolean;
   todoData: TodoItemType[];
-  getTodoResponse: () => Promise<void> | void;
+  getTodoResponse: () => Promise<void>;
 }
 
 export const TodoContext = createContext<TodoContextType>({
   isLoading: true,
   todoData: [],
-  getTodoResponse: () => {},
+  getTodoResponse: async () => {},
 });
 
 const Todo = () => {

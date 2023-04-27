@@ -20,7 +20,6 @@ export const TodoContext = createContext<TodoContextType>({
 const Todo = () => {
   useAuth();
   const [isLoading, todoData, getTodoResponse] = useTodo();
-
   const todoValues = { isLoading, todoData, getTodoResponse };
 
   useEffect(() => {

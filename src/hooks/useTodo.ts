@@ -3,9 +3,9 @@ import { useState, useCallback } from 'react';
 import { getTodoApi } from '../api/todoApi';
 import { TodoItemType } from '../@types/types';
 
-type useTodoTupleType = [boolean, TodoItemType[], () => Promise<void>];
+type useTodoType = [boolean, TodoItemType[], () => Promise<void>];
 
-const useTodo = (): useTodoTupleType => {
+const useTodo = (): useTodoType => {
   const [isLoading, setIsLoading] = useState(true);
   const [todoData, setTodoData] = useState<TodoItemType[]>([]);
 
